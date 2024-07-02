@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Project Citylytics</title>
+  <link rel="stylesheet" href="../../index.css" />
+  <style>
+    /* Styles for the modal dialog */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgb(0,0,0);
+      background-color: rgba(0,0,0,0.4);
+      padding-top: 60px;
+    }
+
+    .modal-content {
+      background-color: #fefefe;
+      margin: 5% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <!-- Your other code here -->
+
+    <!-- Logout Section -->
+    <div class="nav-option logout">
+      <img src="icons/logout_blue.png" class="nav-img" alt="logout">
+      <a href="#" id="logoutLink">Logout</a>
+    </div>
+
+    <!-- The Modal -->
+    <div id="logoutModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Are you sure you want to log out?</p>
+        <button id="confirmLogout">Yes</button>
+        <button id="cancelLogout">No</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { getAuth, signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBWEO8zpfEzUNtt8oHzYIq5PzMpW6Efj_I",
+      authDomain: "project-citylytics.firebaseapp.com",
+      databaseURL: "https://project-citylytics-default-rtdb.firebaseio.com",
+      projectId: "project-citylytics",
+      storageBucket: "project-citylytics.appspot.com",
+      messagingSenderId: "589518230343",
+      appId: "1:589518230343:web:41a5daeb85810ea9257262",
+      measurementId: "G-V0PWB4WS2G"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    // Get the modal
+    var modal = document.getElementById("logoutModal");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // Get the logout link
+    var logoutLink = document.getElementById("logoutLink");
+
+    // Get the confirm and cancel buttons
+    var confirmLogout = document.getElementById("confirmLogout");
+    var cancelLogout = document.getElementById("cancelLogout");
+
+    // When the user clicks on the logout link, open the modal
+    logoutLink.onclick = function() {
+      modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+
+    // When the user clicks on the cancel button, close the modal
+    cancelLogout.onclick = function() {
+      modal.style.display = "none";
+    }
+
+    // When the user clicks on the confirm button, sign out the user
+    confirmLogout.onclick = function() {
+      signOut(auth).then(() => {
+        // Sign-out successful.
+        window.location.href = '../../index.html';
+      }).catch((error) => {
+        // An error happened.
+        window.location.href = 'dashboard.html';
+      });
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>

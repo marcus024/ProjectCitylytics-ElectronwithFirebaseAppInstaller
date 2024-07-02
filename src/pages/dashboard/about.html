@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible"
+          content="IE=edge">
+    <meta name="viewport" 
+          content="width=device-width, 
+                   initial-scale=1.0">
+    <title>Project Citylytics</title>
+    <link rel="stylesheet" 
+          href="main.css">
+    <link rel="stylesheet" 
+          href="responsive.css">
+    <link rel="stylesheet" 
+          href="about.css">
+</head>
+
+<body>
+  
+    <!-- for header part -->
+    <header>
+
+        <div class="logosec">
+            <div class="logo">Project Citylytics</div>
+            <img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210182541/Untitled-design-(30).png"
+                class="icn menuicn" 
+                id="menuicn" 
+                alt="menu-icon">
+        </div>
+        <div class="message">
+            <div class="dp">
+              <img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210180014/profile-removebg-preview.png"
+                    class="dpicn" 
+                    alt="dp">
+              </div>
+        </div>
+    </header>
+    <div class="main-container">
+        <div class="navcontainer">
+            <nav class="nav">
+                <div class="nav-upper-options">
+                    <div class="nav-option option1">
+                        <img src="icons/dash_blue.png"
+                            class="nav-img" 
+                            alt="dashboard">
+                        <!-- <h3> Dashboard</h3> -->
+                         <a href="dashboard.html" >Dashboard</a>
+                    </div>
+
+                    <div class="option2 nav-option">
+                        <img src="icons/user_blue.png"
+                            class="nav-img" 
+                            alt="articles">
+                        <!-- <h3> User Manual</h3> -->
+                         <a href="user.html">User Manual</a>
+                    </div>
+
+                    <div class="nav-option option3 active" >
+                        <img src="icons/info_blue.png"
+                            class="nav-img active" 
+                            alt="report">
+                        <!-- <h3> About</h3> -->
+                         <a href="about.html" class="active">About</a>
+                    </div>
+
+                    <div class="nav-option logout">
+                        <img src="icons/logout_blue.png"
+                            class="nav-img" 
+                            alt="logout">
+                        <!-- <h3>Logout</h3> -->
+                         <a href="logout.html">Logout</a>
+                    </div>
+
+                </div>
+            </nav>
+        </div>
+        <div class="main">
+           <div class="container">
+                <div class="row">
+                    <div class="column about">
+                        <h3>About Project Citylytics</h3>
+                        <p>Predictive Data Analytics and Quantitative Modelling of Catbalogan City’s Government Efficiency Indexing
+                        provides Intelligence Reports that is focused focused on the ten-point Kauswagan Katbalogan Agenda which
+                        is the Catbalogan City Mayor’s priorities relative to the major pain points of development.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column profile">
+                        <h3>Meet Our Team</h3>
+                        <div class="column carddd">
+                            <div class="card">
+                                <img src="images/tabiongan.png" alt="Mark" style="width:100%">
+                                <div class="container-profile">
+                                    <h2>Engr. Raven C. Tabiongan</h2>
+                                    <p class="title">Project Leader</p>
+                                    <h7>raven.tabiongan@ssu.edu.ph</h7>
+                                    <p><button class="button">Contact</button></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column carddd">
+                            <div class="card">
+                                <img src="images/bautista.jpg" alt="Mark" style="width:100%">
+                                <div class="container-profile">
+                                    <h2>Engr. Floro Bautista </h2>
+                                    <p class="title">Project Staff</p>
+                                    <h7>floro.bautista@ssu.edu.ph</h7>
+                                    <p><button class="button">Contact</button></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column carddd">
+                            <div class="card">
+                                <img src="images/galaroza.jpg" alt="Mark" style="width:100%">
+                                <div class="container-profile">
+                                    <h2>Engr. Homer Galaroza</h2>
+                                    <p class="title">Project Staff</p>
+                                    <h7>homer.galaroza@ssu.edu.ph</h7>
+                                    <p><button class="button">Contact</button></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column carddd">
+                            <div class="card">
+                                <img src="images/calipayan.png" alt="Mark" style="width:100%">
+                                <div class="container-profile">
+                                    <h2>Engr. Mark Antony V. Calipayan</h2>
+                                    <p class="title">Project Technical Assistant</p>
+                                    <h7>markantony.calipayan@ssu.edu.ph</h7>
+                                    <p><button class="button">Contact</button></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column carddd">
+                            <div class="card">
+                                <img src="images/pornias.png" alt="Mark" style="width:100%">
+                                <div class="container-profile">
+                                    <h2>Charlote E.Pornias</h2>
+                                    <p class="title">Project Administrative Aide</p>
+                                    <h7>charlote.calipayan@ssu.edu.ph</h7>
+                                    <p><button class="button">Contact</button></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <script src="dashboard.js"></script>
+    <script>
+        // Adjust iframe height based on content
+        document.getElementById('dynamic-iframe').onload = function() {
+            var iframe = document.getElementById('dynamic-iframe');
+            iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+        };
+    </script>
+</body>
+</html>
